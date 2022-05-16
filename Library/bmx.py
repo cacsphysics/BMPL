@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar 13 14:36:19 2019
- This will be a growing list of functions.
-@author: CACS
-"""
 import numpy as np
 import scipy.signal as sps
 
@@ -41,12 +35,12 @@ def finding_Index_Time(time_Data, time_Interest):
     return output_Time
 
 
-#|| DAQ picoscope has resolution of 100MHz ||#
 def high_Pass_Filter(data, filter_Freq, fs=100e6, N=5):
     #########################################################
     """
         Beginnings of a filter function.
         fs -- sampling frequency
+        DAQ picoscope has resolution of 100MHz 
     """
     #########################################################
     Wn = 2.0*filter_Freq/fs

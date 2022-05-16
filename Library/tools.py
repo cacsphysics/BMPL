@@ -1,5 +1,5 @@
 import numpy as np
-import bmx as BMX
+import bmx
 import dataset as data03
 import matplotlib.pylab as plt
 import spectrum_wwind as sw
@@ -8,8 +8,8 @@ def get_windowed_bmag(pos, shot, window):
     """ Output the windowed bmag and time arrays of {shot} at {pos}."""
     bmag, time = get_bmag(pos, shot)
 
-    start_dex = BMX.finding_Index_Time(time*1e-6, window[0])
-    end_dex = BMX.finding_Index_Time(time*1e-6, window[1])
+    start_dex = bmx.finding_Index_Time(time*1e-6, window[0])
+    end_dex = bmx.finding_Index_Time(time*1e-6, window[1])
 
     wbmag = bmag[start_dex:end_dex]
     time = time[start_dex:end_dex]
@@ -21,8 +21,8 @@ def get_windowed_filtered_bmag(pos, shot, window, filt):
     """ Output the windowed filtered bmag and time arrays of {shot} at {pos}."""
     filt_bmag, time = get_filtered_bmag(pos, shot, filt)
 
-    start_dex = BMX.finding_Index_Time(time*1e-6, window[0])
-    end_dex = BMX.finding_Index_Time(time*1e-6, window[1])
+    start_dex = bmx.finding_Index_Time(time*1e-6, window[0])
+    end_dex = bmx.finding_Index_Time(time*1e-6, window[1])
 
     wfilt_bmag = filt_bmag[start_dex:end_dex]
     time = time[start_dex:end_dex]
@@ -46,7 +46,7 @@ def get_bmag(pos, shot):
 
 def HPF(data, filt):
     """ Outputs the filtered data """
-    data = BMX.high_Pass_Filter(data, filter_Freq=filt)
+    data = bmx.high_Pass_Filter(data, filter_Freq=filt)
     return data
 
 

@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pylab as plt
 import tools
-import bmx_data as data03
+import dataset as data03
 import bmag_norms as norms
 import bmx as BMX
 
